@@ -11,5 +11,57 @@
   "description": {
     "ar": "ثيم سياح - تجربة عربية فاخرة",
     "en": "Siah theme - Arabic-first premium experience"
-  }
+  },
+
+  {
+  "name": "siah-featured-products",
+  "title": {
+    "ar": "منتجات مميزة - Siah",
+    "en": "Siah Featured Products"
+  },
+  "icon": "sicon-packed-box",
+  "path": "home.siah-featured-products",
+  "fields": [
+    {
+      "id": "title",
+      "type": "string",
+      "format": "text",
+      "label": "Section title",
+      "multilanguage": true,
+      "required": false,
+      "value": {
+        "ar": "الأكثر طلبًا هذا الأسبوع",
+        "en": "Most wanted this week"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "string",
+      "format": "text",
+      "label": "Section eyebrow",
+      "multilanguage": true,
+      "required": false,
+      "value": {
+        "ar": "منتجات مختارة",
+        "en": "Featured products"
+      }
+    },
+    {
+      "id": "products",
+      "type": "items",
+      "icon": "sicon-list",
+      "label": "Products",
+      "format": "dropdown-list",
+      "description": "Select the products to show in this section",
+      "required": true,
+      "multichoice": true,
+      "source": "products",
+      "searchable": true,
+      "minLength": 1,
+      "maxLength": 8,
+      "value": []
+    }
+  ]
+}
+  
 }
