@@ -67,16 +67,29 @@
     <a href="{{ product.url }}">{{ product.name }}</a>
   </h3>
 
-  <div class="siah-product-card__price">
-    {% if product.sale_price %}
-      <span class="siah-product-card__price-current">{{ product.sale_price }}</span>
-      {% if product.regular_price %}
-        <span class="siah-product-card__price-old">{{ product.regular_price }}</span>
-      {% endif %}
-    {% else %}
-      <span class="siah-product-card__price-current">{{ product.price }}</span>
+  {% set sale_price = product.sale_price is defined ? product.sale_price : null %}
+{% set regular_price = product.regular_price is defined ? product.regular_price : null %}
+{% set price = product.price is defined ? product.price : null %}
+
+{% set has_valid_sale_price = sale_price
+  and sale_price != 0
+  and sale_price != '0'
+  and sale_price != '0.00'
+  and sale_price != '0 ر.س'
+  and sale_price != '0.0'
+%}
+
+<div class="siah-product-card__price">
+  {% if has_valid_sale_price %}
+    <span class="siah-product-card__price-current">{{ sale_price }}</span>
+
+    {% if regular_price and regular_price != sale_price %}
+      <span class="siah-product-card__price-old">{{ regular_price }}</span>
     {% endif %}
-  </div>
+  {% else %}
+    <span class="siah-product-card__price-current">{{ price }}</span>
+  {% endif %}
+</div>
 
   <a href="{{ product.url }}" class="siah-btn siah-btn--secondary siah-product-card__cta">
     عرض المنتج

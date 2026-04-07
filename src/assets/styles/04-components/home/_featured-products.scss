@@ -3,10 +3,17 @@
   background: var(--siah-color-bg);
 }
 
+// .siah-products-grid {
+//   display: grid;
+//   grid-template-columns: repeat(4, minmax(0, 1fr));
+//   gap: var(--siah-space-lg);
+// }
+
 .siah-products-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--siah-space-lg);
+  align-items: stretch;
 }
 
 .siah-product-card {
@@ -141,4 +148,41 @@
   border-radius: var(--siah-radius-lg);
   text-align: center;
   color: var(--siah-color-text-light);
+}
+
+.siah-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--siah-space-lg);
+  align-items: stretch;
+}
+
+.siah-product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.siah-product-card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 8px;
+}
+
+.siah-product-card__title {
+  min-height: 3.2em;
+}
+
+.siah-product-card__price {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.siah-product-card__cta {
+  margin-top: auto;
+  width: 100%;
 }
