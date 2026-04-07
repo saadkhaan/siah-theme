@@ -49,33 +49,24 @@
             {% endif %}
           {% endif %}
 
-          <article class="siah-product-card">
-            <a href="{{ product.url|default('#') }}" class="siah-product-card__media-wrap">
-              <div class="siah-product-card__media">
-                {% if image_url %}
-                  <img src="{{ image_url }}" alt="{{ product.name|default('Product') }}" loading="lazy">
-                {% else %}
-                  <div class="siah-product-card__placeholder"></div>
-                {% endif %}
-              </div>
-            </a>
+          {% set current_price = product.price|default(null) %}
+{% set old_price = null %}
 
-            <div class="siah-product-card__content">
-              <h3 class="siah-product-card__title">
-                <a href="{{ product.url|default('#') }}">{{ product.name|default('Product') }}</a>
-              </h3>
+{% if product.regular_price is defined and product.regular_price and product.regular_price != current_price %}
+  {% set old_price = product.regular_price %}
+{% elseif product.sale_price is defined and product.sale_price and product.sale_price != 0 and product.sale_price != '0' and product.sale_price != current_price %}
+  {% set old_price = product.sale_price %}
+{% endif %}
 
-              <div class="siah-product-card__price">
-                <span class="siah-product-card__price-current">
-                  {{ product.price|default('—') }}
-                </span>
-              </div>
+<div class="siah-product-card__price">
+  {% if old_price %}
+    <span class="siah-product-card__price-old">{{ old_price }}</span>
+  {% endif %}
 
-              <a href="{{ product.url|default('#') }}" class="siah-btn siah-btn--secondary siah-product-card__cta">
-                عرض المنتج
-              </a>
-            </div>
-          </article>
+  <span class="siah-product-card__price-current">
+    {{ current_price|default('—') }}
+  </span>
+</div>
         {% endfor %}
       </div>
     {% else %}
