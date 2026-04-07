@@ -67,8 +67,14 @@
                 <a href="{{ product.url }}">{{ product.name }}</a>
               </h3>
 
+              {% set has_valid_sale_price = product.sale_price is defined
+                and product.sale_price
+                and product.sale_price != 0
+                and product.sale_price != '0'
+                and product.sale_price != '0.00' %}
+
               <div class="siah-product-card__price">
-                {% if product.sale_price %}
+                {% if has_valid_sale_price %}
                   <span class="siah-product-card__price-current">{{ product.sale_price }}</span>
                   {% if product.regular_price %}
                     <span class="siah-product-card__price-old">{{ product.regular_price }}</span>

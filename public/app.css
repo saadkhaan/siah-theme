@@ -27601,6 +27601,7 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
 .siah-product-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .siah-product-card__media-wrap {
   position: relative;
@@ -27615,8 +27616,15 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
 }
 .siah-product-card__media {
   aspect-ratio: 4/5;
-  background: linear-gradient(135deg, #f4f1eb 0%, #ece6dd 100%);
-  transition: transform 0.35s ease;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+.siah-product-card__media img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 .siah-product-card:hover .siah-product-card__media {
   transform: scale(1.02);
@@ -27641,6 +27649,7 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 1;
 }
 .siah-product-card__category {
   font-size: 12px;
