@@ -66,9 +66,11 @@
               </h3>
 
               <div class="siah-product-card__price">
-                <span class="siah-product-card__price-current">
-                  {{ product.price|default('—') }}
-                </span>
+                {% if regular_price and regular_price != current_price %}
+                  <span class="siah-product-card__price-old">{{ regular_price }}</span>
+                {% endif %}
+
+                <span class="siah-product-card__price-current">{{ current_price }}</span>
               </div>
 
               <a href="{{ product.url|default('#') }}" class="siah-btn siah-btn--secondary siah-product-card__cta">
