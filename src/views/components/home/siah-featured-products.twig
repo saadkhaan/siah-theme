@@ -1,5 +1,10 @@
+{% set products = component.products %}
+{% set title = component.title %}
+{% set subtitle = component.subtitle %}
+
 <section class="siah-featured-products">
   <div class="container">
+
     <div class="siah-section-head">
       <div>
         {% if subtitle %}
@@ -15,56 +20,12 @@
     {% if products and products|length %}
       <div class="siah-products-grid">
         {% for product in products %}
-          <article class="siah-product-card">
-            <a href="{{ product.url }}" class="siah-product-card__media-wrap">
-              {% if product.is_on_sale %}
-                <span class="siah-product-card__badge">خصم</span>
-              {% elseif product.is_new %}
-                <span class="siah-product-card__badge">جديد</span>
-              {% endif %}
-
-              <div class="siah-product-card__media">
-                {% if product.image %}
-                  <img
-                    src="{{ product.image.url|default(product.image) }}"
-                    alt="{{ product.name }}"
-                    loading="lazy"
-                  >
-                {% endif %}
-              </div>
-            </a>
-
-            <div class="siah-product-card__content">
-              {% if product.category and product.category.name %}
-                <p class="siah-product-card__category">{{ product.category.name }}</p>
-              {% endif %}
-
-              <h3 class="siah-product-card__title">
-                <a href="{{ product.url }}">{{ product.name }}</a>
-              </h3>
-
-              <div class="siah-product-card__price">
-                {% if product.sale_price %}
-                  <span class="siah-product-card__price-current">{{ product.sale_price }}</span>
-                  {% if product.regular_price %}
-                    <span class="siah-product-card__price-old">{{ product.regular_price }}</span>
-                  {% endif %}
-                {% else %}
-                  <span class="siah-product-card__price-current">{{ product.price }}</span>
-                {% endif %}
-              </div>
-
-              <a href="{{ product.url }}" class="siah-btn siah-btn--secondary siah-product-card__cta">
-                عرض المنتج
-              </a>
-            </div>
-          </article>
+          <div>{{ product.name }}</div> <!-- debug -->
         {% endfor %}
       </div>
     {% else %}
-      <div class="siah-empty-state">
-        <p>اختر منتجات لعرضها في هذا القسم.</p>
-      </div>
+      <p>❌ No products coming from component</p>
     {% endif %}
+
   </div>
 </section>
