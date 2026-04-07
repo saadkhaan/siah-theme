@@ -27704,6 +27704,7 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
 }
 .siah-editorial {
   padding: 64px 0;
