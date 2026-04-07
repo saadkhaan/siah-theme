@@ -59,35 +59,29 @@
             </a>
 
             <div class="siah-product-card__content">
-              {% if product.category and product.category.name %}
-                <p class="siah-product-card__category">{{ product.category.name }}</p>
-              {% endif %}
+  {% if product.category and product.category.name %}
+    <p class="siah-product-card__category">{{ product.category.name }}</p>
+  {% endif %}
 
-              <h3 class="siah-product-card__title">
-                <a href="{{ product.url }}">{{ product.name }}</a>
-              </h3>
+  <h3 class="siah-product-card__title">
+    <a href="{{ product.url }}">{{ product.name }}</a>
+  </h3>
 
-              {% set has_valid_sale_price = product.sale_price is defined
-                and product.sale_price
-                and product.sale_price != 0
-                and product.sale_price != '0'
-                and product.sale_price != '0.00' %}
+  <div class="siah-product-card__price">
+    {% if product.sale_price %}
+      <span class="siah-product-card__price-current">{{ product.sale_price }}</span>
+      {% if product.regular_price %}
+        <span class="siah-product-card__price-old">{{ product.regular_price }}</span>
+      {% endif %}
+    {% else %}
+      <span class="siah-product-card__price-current">{{ product.price }}</span>
+    {% endif %}
+  </div>
 
-              <div class="siah-product-card__price">
-                {% if has_valid_sale_price %}
-                  <span class="siah-product-card__price-current">{{ product.sale_price }}</span>
-                  {% if product.regular_price %}
-                    <span class="siah-product-card__price-old">{{ product.regular_price }}</span>
-                  {% endif %}
-                {% else %}
-                  <span class="siah-product-card__price-current">{{ product.price }}</span>
-                {% endif %}
-              </div>
-
-              <a href="{{ product.url }}" class="siah-btn siah-btn--secondary siah-product-card__cta">
-                عرض المنتج
-              </a>
-            </div>
+  <a href="{{ product.url }}" class="siah-btn siah-btn--secondary siah-product-card__cta">
+    عرض المنتج
+  </a>
+</div>
           </article>
         {% endfor %}
       </div>
