@@ -27605,20 +27605,19 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
   height: 100%;
 }
 .siah-product-card__media-wrap {
-  position: relative;
   display: block;
   border-radius: 22px;
   overflow: hidden;
-  background: #faf8f5;
   border: 1px solid #e5e7eb;
   border: 1px solid var(--siah-color-border);
+  background: #faf8f5;
   margin-bottom: 16px;
   margin-bottom: var(--siah-space-md);
 }
 .siah-product-card__media {
   aspect-ratio: 4/5;
   overflow: hidden;
-  background: linear-gradient(135deg, #f4f1eb 0%, #ece6dd 100%);
+  background: #f4f4f4;
 }
 .siah-product-card__media img {
   width: 100%;
@@ -27627,32 +27626,16 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
      object-fit: cover;
   display: block;
 }
-.siah-product-card__badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 0 12px;
-  border-radius: 999px;
-  border-radius: var(--siah-radius-full);
-  background: rgba(17, 17, 17, 0.88);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
+.siah-product-card__placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f4f1eb 0%, #ece6dd 100%);
 }
 .siah-product-card__content {
   display: flex;
   flex-direction: column;
   flex: 1;
   gap: 8px;
-}
-.siah-product-card__category {
-  font-size: 12px;
-  color: #6b7280;
-  color: var(--siah-color-text-light);
 }
 .siah-product-card__title {
   font-size: 16px;
@@ -27667,11 +27650,9 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
   color: inherit;
 }
 .siah-product-card__price {
+  min-height: 32px;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  min-height: 32px;
 }
 .siah-product-card__price-current {
   font-size: 16px;
@@ -27679,14 +27660,6 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
   font-weight: 700;
   color: #111827;
   color: var(--siah-color-text);
-}
-.siah-product-card__price-old {
-  font-size: 14px;
-  font-size: var(--siah-text-sm);
-  color: #6b7280;
-  color: var(--siah-color-text-light);
-  -webkit-text-decoration: line-through;
-  text-decoration: line-through;
 }
 .siah-product-card__cta {
   margin-top: auto;
