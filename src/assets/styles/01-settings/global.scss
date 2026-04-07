@@ -1,29 +1,75 @@
+/* =========================
+   SIAH DESIGN SYSTEM
+========================= */
 
-// Colors
-$main-color: var(--color-primary);
-$infinte-color: var(--infinte-color);
-$main-text-color: var(--main-text-color);
-
+/* COLORS */
 :root {
-  --infinte-color: #c9c9c9;
-  --main-text-color: #231f1e;
-  --main-text-color-dark: #2b2d34;
+  --siah-color-primary: #111111;
+  --siah-color-secondary: #6b7280;
 
-  /* current */
-  --color-primary: #5cd5c4;
-  --color-primary: #414042;
-  --color-primary-d: #272628;
-  --color-primary-l: #676668;
-  --color-primary-reverse: #ff6767;
-  --color-text: #7c8082;
-  --bg-gray: #c6c7ce1a;
-  --color-grey: #f5f7f9;
-  --color-light-grey: #eeeeee;
-  /* font-size */
-  --font-sm: 0.8685714286rem;
-  /* font-family: ; */
-  --font-main: "DINNextLTArabic";
+  --siah-color-bg: #ffffff;
+  --siah-color-bg-soft: #f9fafb;
 
-  /* plugins */
-  --mm-ocd-width: calc(100% - 51px);
+  --siah-color-border: #e5e7eb;
+
+  --siah-color-text: #111827;
+  --siah-color-text-light: #6b7280;
+
+  --siah-color-accent: #c4a484; /* luxury touch (can change later) */
+}
+
+/* SPACING SYSTEM */
+:root {
+  --siah-space-xs: 4px;
+  --siah-space-sm: 8px;
+  --siah-space-md: 16px;
+  --siah-space-lg: 24px;
+  --siah-space-xl: 40px;
+  --siah-space-2xl: 64px;
+}
+
+/* BORDER RADIUS */
+:root {
+  --siah-radius-sm: 6px;
+  --siah-radius-md: 10px;
+  --siah-radius-lg: 16px;
+  --siah-radius-full: 999px;
+}
+
+/* TYPOGRAPHY */
+:root {
+  --siah-font-base: var(--font-main, system-ui, sans-serif);
+
+  --siah-text-xs: 12px;
+  --siah-text-sm: 14px;
+  --siah-text-md: 16px;
+  --siah-text-lg: 18px;
+  --siah-text-xl: 24px;
+  --siah-text-2xl: 32px;
+}
+
+/* BASE BODY */
+body {
+  font-family: var(--siah-font-base);
+  background: var(--siah-color-bg);
+  color: var(--siah-color-text);
+  line-height: 1.6;
+}
+
+/* CONTAINER SYSTEM */
+.container {
+  width: min(1200px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+/* LINKS */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* IMAGES */
+img {
+  max-width: 100%;
+  display: block;
 }

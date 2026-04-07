@@ -1,49 +1,101 @@
+.siah-footer {
+  background: var(--siah-color-bg);
+  border-top: 1px solid var(--siah-color-border);
+  margin-top: var(--siah-space-2xl);
 
-.store-footer {
-  @apply relative bg-darker text-white mt-8 sm:mt-16;
-
-  a{
-    @apply transition-opacity hover:opacity-75;
+  .container {
+    padding-top: var(--siah-space-xl);
+    padding-bottom: var(--siah-space-xl);
   }
+}
 
-  &__inner{
-    @apply bg-dark py-8 lg:py-16 border-b border-dashed border-b-white/10;
-  }  
+/* GRID */
+.siah-footer .grid {
+  gap: var(--siah-space-xl);
+}
 
-  h3{
-    @apply text-lg font-bold mb-3 lg:mb-5;
+/* TITLES */
+.siah-footer h3 {
+  font-size: var(--siah-text-lg);
+  font-weight: 600;
+  margin-bottom: var(--siah-space-sm);
+}
+
+.siah-footer h4 {
+  font-size: var(--siah-text-md);
+  font-weight: 500;
+  margin-bottom: var(--siah-space-sm);
+}
+
+/* TEXT */
+.siah-footer p {
+  font-size: var(--siah-text-sm);
+  color: var(--siah-color-text-light);
+  line-height: 1.7;
+}
+
+/* LINKS */
+.siah-footer a {
+  display: block;
+  font-size: var(--siah-text-sm);
+  color: var(--siah-color-text-light);
+  margin-bottom: 6px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--siah-color-text);
   }
+}
 
-  .social-link {
-    @apply border rounded-full w-8 h-8 justify-center flex items-center hover:opacity-75 transition duration-300 text-sm
-  }
+/* SOCIAL */
+.siah-footer salla-social {
+  display: flex;
+  gap: var(--siah-space-sm);
 
-  .contact-social{
-    @apply mt-5 pt-5 border-t border-white/10;
+  a {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--siah-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--siah-color-bg-soft);
+    transition: all 0.2s ease;
 
-    ul {
-      @apply mb-0;
-    }
-  }
-
-  .footer-is-light & {
-    @apply bg-gray-50 text-gray-700;
-
-    .store-footer__inner {
-      @apply bg-gray-100 border-b-gray-200;
-    }
-
-    .social-link {
-      @apply border-gray-300;
-    }
-
-    .contact-social{
-      @apply border-gray-100;
+    &:hover {
+      background: var(--siah-color-border);
     }
   }
 }
 
+/* BOTTOM BAR */
+.siah-footer .border-t {
+  border-color: var(--siah-color-border);
+}
 
-.copyright-text p{
-  @apply text-gray-700;
+.siah-footer .text-sm {
+  font-size: var(--siah-text-sm);
+  color: var(--siah-color-text-light);
+}
+
+/* PAYMENTS */
+.siah-footer salla-payments {
+  display: flex;
+  align-items: center;
+  gap: var(--siah-space-sm);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .siah-footer {
+    text-align: center;
+  }
+
+  .siah-footer .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .siah-footer salla-social {
+    justify-content: center;
+  }
 }

@@ -1,14 +1,35 @@
-{#
-| Variable         | Type       | Description                                                         |
-|------------------|------------|---------------------------------------------------------------------|
-| page             | object     |                                                                     |
-| page.title       | string     | *could be html                                                      |
-| page.slug        | string     | ex: "cat.show"                                                      |
-#}
 {% extends "layouts.master" %}
 
 {% block content %}
-  <div style="padding: 100px; text-align: center;">
-    <h1>SIAH THEME START</h1>
+<section class="siah-hero">
+  <div class="container">
+    <div class="siah-hero__grid">
+
+      <div class="siah-hero__content">
+        <span class="siah-hero__eyebrow">Siah Theme</span>
+
+        <h1 class="siah-hero__title">
+          تجربة عربية أولاً بتصميم أنيق
+        </h1>
+
+        <p class="siah-hero__text">
+          ثيم احترافي لمتاجر سلة يجمع بين البساطة الراقية وتجربة تسوق عملية
+          تناسب العلامات التجارية الحديثة والمتاجر متعددة الفئات.
+        </p>
+
+        <div class="siah-hero__actions">
+          <a href="#" class="siah-btn siah-btn--primary">ابدأ التسوق</a>
+          <a href="#" class="siah-btn siah-btn--secondary">استكشف الأقسام</a>
+        </div>
+      </div>
+
+      <div class="siah-hero__visual">
+        <div class="siah-hero__card">
+          <div class="siah-hero__media"></div>
+        </div>
+      </div>
+
+    </div>
   </div>
+</section>
 {% endblock %}
