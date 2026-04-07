@@ -27699,6 +27699,12 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
     grid-template-columns: 1fr;
   }
 }
+.siah-product-card__media img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .siah-editorial {
   padding: 64px 0;
   padding: var(--siah-space-2xl) 0;
