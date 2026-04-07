@@ -1,10 +1,5 @@
 {% extends "layouts.master" %}
 
 {% block content %}
-  {% include "components.home.hero" %}
-  {% include "components.home.categories" %}
-  {% component 'home.siah-featured-products' %}
-  {% include "components.home.editorial" %}
-  {% include "components.home.trust" %}
-  {% include "components.home.testimonials" %}
+  {% component home %}
 {% endblock %}
