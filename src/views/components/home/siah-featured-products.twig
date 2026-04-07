@@ -28,28 +28,34 @@
               {% endif %}
 
               <div class="siah-product-card__media">
-  {% set image_url = null %}
+                {% set image_url = null %}
 
-  {% if product.image is defined and product.image %}
-    {% if product.image.url is defined %}
-      {% set image_url = product.image.url %}
-    {% else %}
-      {% set image_url = product.image %}
-    {% endif %}
-  {% elseif product.main_image is defined and product.main_image %}
-    {% set image_url = product.main_image %}
-  {% elseif product.images is defined and product.images[0] is defined %}
-    {% if product.images[0].url is defined %}
-      {% set image_url = product.images[0].url %}
-    {% else %}
-      {% set image_url = product.images[0] %}
-    {% endif %}
-  {% endif %}
+                {% if product.image is defined and product.image %}
+                  {% if product.image.url is defined and product.image.url %}
+                    {% set image_url = product.image.url %}
+                  {% else %}
+                    {% set image_url = product.image %}
+                  {% endif %}
+                {% elseif product.main_image is defined and product.main_image %}
+                  {% if product.main_image.url is defined and product.main_image.url %}
+                    {% set image_url = product.main_image.url %}
+                  {% else %}
+                    {% set image_url = product.main_image %}
+                  {% endif %}
+                {% elseif product.images is defined and product.images and product.images[0] is defined %}
+                  {% if product.images[0].url is defined and product.images[0].url %}
+                    {% set image_url = product.images[0].url %}
+                  {% else %}
+                    {% set image_url = product.images[0] %}
+                  {% endif %}
+                {% endif %}
 
-  {% if image_url %}
-    <img src="{{ image_url }}" alt="{{ product.name }}" loading="lazy">
-  {% endif %}
-</div>
+                {% if image_url %}
+                  <img src="{{ image_url }}" alt="{{ product.name }}" loading="lazy">
+                {% else %}
+                  <pre style="font-size:12px; direction:ltr; text-align:left; white-space:pre-wrap; padding:12px; overflow:auto;">{{ product|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
+                {% endif %}
+              </div>
             </a>
 
             <div class="siah-product-card__content">
