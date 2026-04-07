@@ -5,8 +5,16 @@
   },
   "repository": "https://github.com/saadkhaan/siah-theme",
   "author_email": "support@salla.sa",
-  "features": [],
+
+  "features": [
+    {
+      "name": "home",
+      "type": "components"
+    }
+  ],
+
   "settings": [],
+
   "components": [
     {
       "name": "siah-featured-products",
@@ -23,7 +31,6 @@
           "format": "text",
           "label": "Section title",
           "multilanguage": true,
-          "required": false,
           "value": {
             "ar": "الأكثر طلبًا هذا الأسبوع",
             "en": "Most wanted this week"
@@ -35,7 +42,6 @@
           "format": "text",
           "label": "Section eyebrow",
           "multilanguage": true,
-          "required": false,
           "value": {
             "ar": "منتجات مختارة",
             "en": "Featured products"
@@ -44,21 +50,18 @@
         {
           "id": "products",
           "type": "items",
-          "icon": "sicon-list",
-          "label": "Products",
           "format": "dropdown-list",
-          "description": "Select the products to show in this section",
-          "required": true,
+          "label": "Products",
           "multichoice": true,
           "source": "products",
           "searchable": true,
           "minLength": 1,
-          "maxLength": 8,
-          "value": []
+          "maxLength": 8
         }
       ]
     }
   ],
+
   "description": {
     "ar": "ثيم سياح - تجربة عربية فاخرة",
     "en": "Siah theme - Arabic-first premium experience"
