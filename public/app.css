@@ -1,6 +1,6 @@
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/.pnpm/css-loader@6.11.0_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/.pnpm/postcss-loader@8.2.0_postcs_241c8f3bd3b4e35bb42a5a05717d3cc7/node_modules/postcss-loader/dist/cjs.js!./node_modules/.pnpm/sass-loader@16.0.6_sass@1.97.2_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js!./src/assets/styles/app.scss ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/css-loader@6.11.0_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/.pnpm/postcss-loader@8.2.0_postcss@8.5.6_typescript@5.7.3_webpack@5.103.0/node_modules/postcss-loader/dist/cjs.js!./node_modules/.pnpm/sass-loader@16.0.6_sass@1.97.2_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js!./src/assets/styles/app.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*
  * IMPORTANT NOTE: Theme based on Tailwindcss but for the purpose of simplifing the DOM we use
  * tailwind classes with @apply directive in the SCSS files
@@ -27705,6 +27705,16 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+}
+.siah-empty-state {
+  padding: 24px;
+  border: 1px dashed #e5e7eb;
+  border: 1px dashed var(--siah-color-border);
+  border-radius: 16px;
+  border-radius: var(--siah-radius-lg);
+  text-align: center;
+  color: #6b7280;
+  color: var(--siah-color-text-light);
 }
 .siah-editorial {
   padding: 64px 0;
