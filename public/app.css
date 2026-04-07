@@ -27699,6 +27699,173 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
     grid-template-columns: 1fr;
   }
 }
+.siah-editorial {
+  padding: 64px 0;
+  padding: var(--siah-space-2xl) 0;
+  background: #ffffff;
+  background: var(--siah-color-bg);
+}
+.siah-editorial__grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(0, 1fr);
+  align-items: center;
+  grid-gap: max(24px, min(4vw, 64px));
+  gap: max(24px, min(4vw, 64px));
+}
+.siah-editorial__media {
+  border-radius: 28px;
+  overflow: hidden;
+  background: #f7f3ee;
+  border: 1px solid #e5e7eb;
+  border: 1px solid var(--siah-color-border);
+}
+.siah-editorial__media-inner {
+  aspect-ratio: 4/5;
+  background: radial-gradient(circle at 22% 20%, rgba(255, 255, 255, 0.95), transparent 30%), linear-gradient(135deg, #f2ede6 0%, #e8e0d4 100%);
+}
+.siah-editorial__content {
+  max-width: 560px;
+}
+.siah-editorial__eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  margin-bottom: var(--siah-space-sm);
+  font-size: 14px;
+  font-size: var(--siah-text-sm);
+  color: #6b7280;
+  color: var(--siah-color-text-light);
+}
+.siah-editorial__title {
+  font-size: max(1.9rem, min(3vw, 3rem));
+  line-height: 1.18;
+  font-weight: 700;
+  color: #111827;
+  color: var(--siah-color-text);
+  margin-bottom: 16px;
+  margin-bottom: var(--siah-space-md);
+}
+.siah-editorial__title span {
+  display: block;
+  color: #6b7280;
+  color: var(--siah-color-secondary);
+}
+.siah-editorial__text {
+  font-size: 16px;
+  font-size: var(--siah-text-md);
+  line-height: 1.95;
+  color: #6b7280;
+  color: var(--siah-color-text-light);
+  margin-bottom: 24px;
+  margin-bottom: var(--siah-space-lg);
+  max-width: 54ch;
+}
+@media (max-width: 991px) {
+  .siah-editorial__grid {
+    grid-template-columns: 1fr;
+  }
+  .siah-editorial__content {
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .siah-editorial__text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .siah-editorial .siah-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 768px) {
+  .siah-editorial {
+    padding: 40px 0;
+    padding: var(--siah-space-xl) 0;
+  }
+  .siah-editorial__media {
+    border-radius: 22px;
+  }
+}
+.siah-trust {
+  padding: 40px 0;
+  padding: var(--siah-space-xl) 0;
+  background: #ffffff;
+  background: var(--siah-color-bg);
+}
+.siah-trust__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 16px;
+  grid-gap: var(--siah-space-md);
+  gap: 16px;
+  gap: var(--siah-space-md);
+}
+.siah-trust__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  gap: var(--siah-space-md);
+  padding: 24px;
+  padding: var(--siah-space-lg);
+  border-radius: 22px;
+  background: #f9fafb;
+  background: var(--siah-color-bg-soft);
+  border: 1px solid #e5e7eb;
+  border: 1px solid var(--siah-color-border);
+}
+.siah-trust__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border-radius: var(--siah-radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border: 1px solid var(--siah-color-border);
+  color: #111827;
+  color: var(--siah-color-text);
+  font-size: 20px;
+}
+.siah-trust__content {
+  min-width: 0;
+}
+.siah-trust__title {
+  font-size: 16px;
+  font-size: var(--siah-text-md);
+  font-weight: 600;
+  color: #111827;
+  color: var(--siah-color-text);
+  margin-bottom: 6px;
+}
+.siah-trust__text {
+  font-size: 14px;
+  font-size: var(--siah-text-sm);
+  line-height: 1.8;
+  color: #6b7280;
+  color: var(--siah-color-text-light);
+}
+@media (max-width: 1100px) {
+  .siah-trust__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 575px) {
+  .siah-trust {
+    padding: 24px 0;
+    padding: var(--siah-space-lg) 0;
+  }
+  .siah-trust__grid {
+    grid-template-columns: 1fr;
+  }
+  .siah-trust__item {
+    padding: 16px;
+    padding: var(--siah-space-md);
+  }
+}
 salla-slider {
     display: block;
 }
