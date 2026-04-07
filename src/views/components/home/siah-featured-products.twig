@@ -19,6 +19,38 @@
     {% if products and products|length %}
       <div class="siah-products-grid">
         {% for product in products %}
+          {% set image_url = null %}
+
+          {% if product.image is defined and product.image %}
+            {% if product.image.url is defined and product.image.url %}
+              {% set image_url = product.image.url %}
+            {% else %}
+              {% set image_url = product.image %}
+            {% endif %}
+          {% elseif product.main_image is defined and product.main_image %}
+            {% if product.main_image.url is defined and product.main_image.url %}
+              {% set image_url = product.main_image.url %}
+            {% else %}
+              {% set image_url = product.main_image %}
+            {% endif %}
+          {% elseif product.images is defined and product.images and product.images[0] is defined %}
+            {% if product.images[0].url is defined and product.images[0].url %}
+              {% set image_url = product.images[0].url %}
+            {% else %}
+              {% set image_url = product.images[0] %}
+            {% endif %}
+          {% endif %}
+
+          {% set display_price = product.price %}
+          {% set compare_price = null %}
+
+          {% if product.sale_price is defined and product.sale_price and product.sale_price != 0 and product.sale_price != '0' and product.sale_price != '0.00' %}
+            {% set display_price = product.sale_price %}
+            {% if product.regular_price is defined and product.regular_price and product.regular_price != product.sale_price %}
+              {% set compare_price = product.regular_price %}
+            {% endif %}
+          {% endif %}
+
           <article class="siah-product-card">
             <a href="{{ product.url }}" class="siah-product-card__media-wrap">
               {% if product.is_on_sale %}
@@ -28,73 +60,35 @@
               {% endif %}
 
               <div class="siah-product-card__media">
-                {% set image_url = null %}
-
-                {% if product.image is defined and product.image %}
-                  {% if product.image.url is defined and product.image.url %}
-                    {% set image_url = product.image.url %}
-                  {% else %}
-                    {% set image_url = product.image %}
-                  {% endif %}
-                {% elseif product.main_image is defined and product.main_image %}
-                  {% if product.main_image.url is defined and product.main_image.url %}
-                    {% set image_url = product.main_image.url %}
-                  {% else %}
-                    {% set image_url = product.main_image %}
-                  {% endif %}
-                {% elseif product.images is defined and product.images and product.images[0] is defined %}
-                  {% if product.images[0].url is defined and product.images[0].url %}
-                    {% set image_url = product.images[0].url %}
-                  {% else %}
-                    {% set image_url = product.images[0] %}
-                  {% endif %}
-                {% endif %}
-
                 {% if image_url %}
                   <img src="{{ image_url }}" alt="{{ product.name }}" loading="lazy">
-                {% else %}
-                  <pre style="font-size:12px; direction:ltr; text-align:left; white-space:pre-wrap; padding:12px; overflow:auto;">{{ product|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
                 {% endif %}
               </div>
             </a>
 
             <div class="siah-product-card__content">
-  {% if product.category and product.category.name %}
-    <p class="siah-product-card__category">{{ product.category.name }}</p>
-  {% endif %}
+              {% if product.category and product.category.name %}
+                <p class="siah-product-card__category">{{ product.category.name }}</p>
+              {% endif %}
 
-  <h3 class="siah-product-card__title">
-    <a href="{{ product.url }}">{{ product.name }}</a>
-  </h3>
+              <h3 class="siah-product-card__title">
+                <a href="{{ product.url }}">{{ product.name }}</a>
+              </h3>
 
-  {% set sale_price = product.sale_price is defined ? product.sale_price : null %}
-{% set regular_price = product.regular_price is defined ? product.regular_price : null %}
-{% set price = product.price is defined ? product.price : null %}
+              <div class="siah-product-card__price">
+                {% if compare_price %}
+                  <span class="siah-product-card__price-old">{{ compare_price }}</span>
+                {% endif %}
 
-{% set has_valid_sale_price = sale_price
-  and sale_price != 0
-  and sale_price != '0'
-  and sale_price != '0.00'
-  and sale_price != '0 ر.س'
-  and sale_price != '0.0'
-%}
+                {% if display_price %}
+                  <span class="siah-product-card__price-current">{{ display_price }}</span>
+                {% endif %}
+              </div>
 
-<div class="siah-product-card__price">
-  {% if has_valid_sale_price %}
-    <span class="siah-product-card__price-current">{{ sale_price }}</span>
-
-    {% if regular_price and regular_price != sale_price %}
-      <span class="siah-product-card__price-old">{{ regular_price }}</span>
-    {% endif %}
-  {% else %}
-    <span class="siah-product-card__price-current">{{ price }}</span>
-  {% endif %}
-</div>
-
-  <a href="{{ product.url }}" class="siah-btn siah-btn--secondary siah-product-card__cta">
-    عرض المنتج
-  </a>
-</div>
+              <a href="{{ product.url }}" class="siah-btn siah-btn--secondary siah-product-card__cta">
+                عرض المنتج
+              </a>
+            </div>
           </article>
         {% endfor %}
       </div>
