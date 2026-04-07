@@ -5,7 +5,7 @@
   },
   "repository": "https://github.com/saadkhaan/siah-theme",
   "author_email": "support@salla.sa",
-  "features": [],
+  "features": ["component-home"],
   "settings": [],
   "components": [
     {
