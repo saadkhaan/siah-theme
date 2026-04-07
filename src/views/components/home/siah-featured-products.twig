@@ -28,14 +28,10 @@
               {% endif %}
 
               <div class="siah-product-card__media">
-                {% if product.image %}
-                  <img
-                    src="{{ product.image.url|default(product.image) }}"
-                    alt="{{ product.name }}"
-                    loading="lazy"
-                  >
-                {% endif %}
-              </div>
+  <pre style="font-size:12px; direction:ltr; text-align:left; white-space:pre-wrap;">
+{{ product|json_encode(constant('JSON_PRETTY_PRINT')) }}
+  </pre>
+</div>
             </a>
 
             <div class="siah-product-card__content">
