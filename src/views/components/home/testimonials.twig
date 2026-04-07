@@ -1,11 +1,48 @@
-{#
-| Variable           | Type                      | Description                         |
-|--------------------|---------------------------|-------------------------------------|
-| limit              | string                    | Maximum number of the testimonials  |
-| type               | string                    | `default:store` all, product, store |
-| sort               | string                    |                                     |
-| hide_customer_info | bool                      | show/hide info customers            |
-#}
-<section class="s-block s-block--testimonials container overflow-hidden">
-    <salla-reviews {{ display_all_url ? "display-all-link" : "" }} limit="{{ limit }}" sort="{{ sort }}" {{ hide_customer_info ? 'hide-customer-info' : '' }} type="{{type}}"></salla-reviews>
-</section> 
+<section class="siah-testimonials">
+  <div class="container">
+    <div class="siah-section-head siah-section-head--center">
+      <div>
+        <span class="siah-section-head__eyebrow">آراء العملاء</span>
+        <h2 class="siah-section-head__title">تجارب حقيقية تزيد الثقة</h2>
+      </div>
+    </div>
+
+    <div class="siah-testimonials__grid">
+      <article class="siah-testimonial-card">
+        <div class="siah-testimonial-card__stars">★★★★★</div>
+        <p class="siah-testimonial-card__text">
+          تجربة جميلة جدًا من ناحية سهولة التصفح وسرعة الطلب، والمنتج وصل بشكل
+          أنيق ومرتب.
+        </p>
+        <div class="siah-testimonial-card__author">
+          <strong>نورة عبدالله</strong>
+          <span>عميلة موثقة</span>
+        </div>
+      </article>
+
+      <article class="siah-testimonial-card">
+        <div class="siah-testimonial-card__stars">★★★★★</div>
+        <p class="siah-testimonial-card__text">
+          أكثر شيء أعجبني هو وضوح الأقسام وسهولة الوصول للمنتجات، التصميم فعلًا
+          مريح ويشجع على الشراء.
+        </p>
+        <div class="siah-testimonial-card__author">
+          <strong>سارة محمد</strong>
+          <span>عميلة متكررة</span>
+        </div>
+      </article>
+
+      <article class="siah-testimonial-card">
+        <div class="siah-testimonial-card__stars">★★★★★</div>
+        <p class="siah-testimonial-card__text">
+          المتجر يبدو احترافيًا جدًا، والتنظيم ممتاز، وهذا أعطاني ثقة أكبر في
+          الطلب من أول زيارة.
+        </p>
+        <div class="siah-testimonial-card__author">
+          <strong>ريم خالد</strong>
+          <span>طلب جديد</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

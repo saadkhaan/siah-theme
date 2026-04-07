@@ -1,0 +1,103 @@
+.siah-categories {
+  padding: var(--siah-space-2xl) 0;
+  background: var(--siah-color-bg);
+}
+
+.siah-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--siah-space-lg);
+  margin-bottom: var(--siah-space-xl);
+}
+
+.siah-section-head__eyebrow {
+  display: inline-block;
+  margin-bottom: var(--siah-space-sm);
+  font-size: var(--siah-text-sm);
+  color: var(--siah-color-text-light);
+}
+
+.siah-section-head__title {
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--siah-color-text);
+}
+
+.siah-section-head__link {
+  font-size: var(--siah-text-sm);
+  color: var(--siah-color-text);
+  white-space: nowrap;
+}
+
+.siah-categories__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--siah-space-lg);
+}
+
+.siah-category-card {
+  display: block;
+  border-radius: var(--siah-radius-lg);
+  overflow: hidden;
+  background: var(--siah-color-bg);
+  border: 1px solid var(--siah-color-border);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.siah-category-card:hover {
+  transform: translateY(-2px);
+  border-color: #d8dbe1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.siah-category-card__media {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(135deg, #f4f1eb 0%, #ece6dd 100%);
+}
+
+.siah-category-card__content {
+  padding: var(--siah-space-md);
+}
+
+.siah-category-card__title {
+  font-size: var(--siah-text-lg);
+  font-weight: 600;
+  color: var(--siah-color-text);
+  margin-bottom: 6px;
+}
+
+.siah-category-card__meta {
+  font-size: var(--siah-text-sm);
+  color: var(--siah-color-text-light);
+  line-height: 1.7;
+}
+
+@media (max-width: 991px) {
+  .siah-categories__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .siah-categories {
+    padding: var(--siah-space-xl) 0;
+  }
+
+  .siah-section-head {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: var(--siah-space-lg);
+  }
+}
+
+@media (max-width: 575px) {
+  .siah-categories__grid {
+    grid-template-columns: 1fr;
+  }
+}
