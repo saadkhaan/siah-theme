@@ -994,10 +994,6 @@ input:where([type='file']):focus {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
-.my-2\.5 {
-    margin-top: 0.625rem;
-    margin-bottom: 0.625rem;
-}
 .-mb-52 {
     margin-bottom: -13rem;
 }
@@ -1166,6 +1162,9 @@ input:where([type='file']):focus {
 .h-7 {
     height: 1.75rem;
 }
+.h-8 {
+    height: 2rem;
+}
 .h-80 {
     height: 20rem;
 }
@@ -1259,6 +1258,9 @@ input:where([type='file']):focus {
 .w-7 {
     width: 1.75rem;
 }
+.w-auto {
+    width: auto;
+}
 .w-full {
     width: 100%;
 }
@@ -1297,9 +1299,6 @@ input:where([type='file']):focus {
 }
 .flex-grow {
     flex-grow: 1;
-}
-.basis-0 {
-    flex-basis: 0px;
 }
 .table-fixed {
     table-layout: fixed;
@@ -1365,9 +1364,6 @@ input:where([type='file']):focus {
 }
 .items-baseline {
     align-items: baseline;
-}
-.items-stretch {
-    align-items: stretch;
 }
 .justify-start {
     justify-content: flex-start;
@@ -1653,9 +1649,6 @@ input:where([type='file']):focus {
     background-color: rgba(240, 253, 244, 1);
     background-color: rgba(240, 253, 244, var(--tw-bg-opacity, 1));
 }
-.bg-inherit {
-    background-color: inherit;
-}
 .bg-primary {
     background-color: #414042;
     background-color: var(--color-primary);
@@ -1789,6 +1782,10 @@ input:where([type='file']):focus {
 .py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+}
+.py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 .\!pt-1 {
     padding-top: 0.25rem !important;
@@ -26080,7 +26077,8 @@ input[type=radio].sr-only:checked ~ div.landing-page > header:before {
 .landing-page .swiper-wrapper {
     padding-bottom: 1.25rem;
 }
-.landing-page .swiper-wrapper .s-product-card-entry, .landing-page .s-products-list-wrapper .s-product-card-entry {
+.landing-page .swiper-wrapper .s-product-card-entry,
+.landing-page .s-products-list-wrapper .s-product-card-entry {
     border-width: 1px;
     --tw-border-opacity: 1;
     border-color: rgba(238, 238, 238, 1);
@@ -26867,6 +26865,9 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     .md\:mt-0 {
         margin-top: 0px;
     }
+    .md\:block {
+        display: block;
+    }
     .md\:flex {
         display: flex;
     }
@@ -26984,6 +26985,9 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     }
     .md\:pb-16 {
         padding-bottom: 4rem;
+    }
+    .md\:text-left {
+        text-align: left;
     }
     .md\:text-2xl {
         font-size: 1.5rem;
@@ -27210,9 +27214,6 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .ltr\:mr-3:where([dir="ltr"], [dir="ltr"] *) {
     margin-right: 0.75rem;
 }
-.ltr\:mr-4:where([dir="ltr"], [dir="ltr"] *) {
-    margin-right: 1rem;
-}
 .ltr\:mr-8:where([dir="ltr"], [dir="ltr"] *) {
     margin-right: 2rem;
 }
@@ -27328,15 +27329,8 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .rtl\:ml-3:where([dir="rtl"], [dir="rtl"] *) {
     margin-left: 0.75rem;
 }
-.rtl\:ml-4:where([dir="rtl"], [dir="rtl"] *) {
-    margin-left: 1rem;
-}
 .rtl\:ml-8:where([dir="rtl"], [dir="rtl"] *) {
     margin-left: 2rem;
-}
-.rtl\:ml-\[unset\]:where([dir="rtl"], [dir="rtl"] *) {
-    margin-left: 0;
-    margin-left: initial;
 }
 .rtl\:ml-auto:where([dir="rtl"], [dir="rtl"] *) {
     margin-left: auto;
@@ -27346,9 +27340,6 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 }
 .rtl\:mr-3:where([dir="rtl"], [dir="rtl"] *) {
     margin-right: 0.75rem;
-}
-.rtl\:mr-4:where([dir="rtl"], [dir="rtl"] *) {
-    margin-right: 1rem;
 }
 .rtl\:-scale-x-100:where([dir="rtl"], [dir="rtl"] *) {
     --tw-scale-x: -1;
